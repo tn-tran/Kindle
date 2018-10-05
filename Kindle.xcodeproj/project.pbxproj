@@ -9,19 +9,25 @@
 /* Begin PBXBuildFile section */
 		FF8527CB21657FF100DEEA15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8527CA21657FF100DEEA15 /* AppDelegate.swift */; };
 		FF8527CD21657FF100DEEA15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8527CC21657FF100DEEA15 /* ViewController.swift */; };
-		FF8527D021657FF100DEEA15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8527CE21657FF100DEEA15 /* Main.storyboard */; };
 		FF8527D221657FF400DEEA15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF8527D121657FF400DEEA15 /* Assets.xcassets */; };
 		FF8527D521657FF400DEEA15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8527D321657FF400DEEA15 /* LaunchScreen.storyboard */; };
+		FF8527DD21658E5000DEEA15 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8527DC21658E5000DEEA15 /* Models.swift */; };
+		FF8527DF216598D300DEEA15 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8527DE216598D300DEEA15 /* BookCell.swift */; };
+		FF8527E12166A26700DEEA15 /* BookPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8527E02166A26700DEEA15 /* BookPageController.swift */; };
+		FF8527E32166AC9500DEEA15 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8527E22166AC9400DEEA15 /* PageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FF8527C721657FF100DEEA15 /* KindleClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KindleClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF8527C721657FF100DEEA15 /* Kindle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kindle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8527CA21657FF100DEEA15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF8527CC21657FF100DEEA15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FF8527CF21657FF100DEEA15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF8527D121657FF400DEEA15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF8527D421657FF400DEEA15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF8527D621657FF400DEEA15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF8527DC21658E5000DEEA15 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		FF8527DE216598D300DEEA15 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		FF8527E02166A26700DEEA15 /* BookPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPageController.swift; sourceTree = "<group>"; };
+		FF8527E22166AC9400DEEA15 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +44,7 @@
 		FF8527BE21657FF100DEEA15 = {
 			isa = PBXGroup;
 			children = (
-				FF8527C921657FF100DEEA15 /* KindleClone */,
+				FF8527C921657FF100DEEA15 /* Kindle */,
 				FF8527C821657FF100DEEA15 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,30 +52,33 @@
 		FF8527C821657FF100DEEA15 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FF8527C721657FF100DEEA15 /* KindleClone.app */,
+				FF8527C721657FF100DEEA15 /* Kindle.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FF8527C921657FF100DEEA15 /* KindleClone */ = {
+		FF8527C921657FF100DEEA15 /* Kindle */ = {
 			isa = PBXGroup;
 			children = (
 				FF8527CA21657FF100DEEA15 /* AppDelegate.swift */,
 				FF8527CC21657FF100DEEA15 /* ViewController.swift */,
-				FF8527CE21657FF100DEEA15 /* Main.storyboard */,
 				FF8527D121657FF400DEEA15 /* Assets.xcassets */,
 				FF8527D321657FF400DEEA15 /* LaunchScreen.storyboard */,
 				FF8527D621657FF400DEEA15 /* Info.plist */,
+				FF8527DC21658E5000DEEA15 /* Models.swift */,
+				FF8527DE216598D300DEEA15 /* BookCell.swift */,
+				FF8527E02166A26700DEEA15 /* BookPageController.swift */,
+				FF8527E22166AC9400DEEA15 /* PageCell.swift */,
 			);
-			path = KindleClone;
+			path = Kindle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FF8527C621657FF100DEEA15 /* KindleClone */ = {
+		FF8527C621657FF100DEEA15 /* Kindle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF8527D921657FF400DEEA15 /* Build configuration list for PBXNativeTarget "KindleClone" */;
+			buildConfigurationList = FF8527D921657FF400DEEA15 /* Build configuration list for PBXNativeTarget "Kindle" */;
 			buildPhases = (
 				FF8527C321657FF100DEEA15 /* Sources */,
 				FF8527C421657FF100DEEA15 /* Frameworks */,
@@ -79,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = KindleClone;
+			name = Kindle;
 			productName = KindleClone;
-			productReference = FF8527C721657FF100DEEA15 /* KindleClone.app */;
+			productReference = FF8527C721657FF100DEEA15 /* Kindle.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FF8527C221657FF100DEEA15 /* Build configuration list for PBXProject "KindleClone" */;
+			buildConfigurationList = FF8527C221657FF100DEEA15 /* Build configuration list for PBXProject "Kindle" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FF8527C621657FF100DEEA15 /* KindleClone */,
+				FF8527C621657FF100DEEA15 /* Kindle */,
 			);
 		};
 /* End PBXProject section */
@@ -124,7 +133,6 @@
 			files = (
 				FF8527D521657FF400DEEA15 /* LaunchScreen.storyboard in Resources */,
 				FF8527D221657FF400DEEA15 /* Assets.xcassets in Resources */,
-				FF8527D021657FF100DEEA15 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +143,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8527DF216598D300DEEA15 /* BookCell.swift in Sources */,
+				FF8527DD21658E5000DEEA15 /* Models.swift in Sources */,
+				FF8527E32166AC9500DEEA15 /* PageCell.swift in Sources */,
 				FF8527CD21657FF100DEEA15 /* ViewController.swift in Sources */,
+				FF8527E12166A26700DEEA15 /* BookPageController.swift in Sources */,
 				FF8527CB21657FF100DEEA15 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,14 +155,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FF8527CE21657FF100DEEA15 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FF8527CF21657FF100DEEA15 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FF8527D321657FF400DEEA15 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -315,7 +319,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FF8527C221657FF100DEEA15 /* Build configuration list for PBXProject "KindleClone" */ = {
+		FF8527C221657FF100DEEA15 /* Build configuration list for PBXProject "Kindle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF8527D721657FF400DEEA15 /* Debug */,
@@ -324,7 +328,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF8527D921657FF400DEEA15 /* Build configuration list for PBXNativeTarget "KindleClone" */ = {
+		FF8527D921657FF400DEEA15 /* Build configuration list for PBXNativeTarget "Kindle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF8527DA21657FF400DEEA15 /* Debug */,
