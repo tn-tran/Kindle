@@ -16,12 +16,11 @@ class BookCell: UITableViewCell {
 			
 			titleLabel.text = book?.title
 			authorLabel.text = book?.author
-			print(book?.coverImageUrl)
 			guard let coverImageUrl = book?.coverImageUrl else { return }
 			guard let url = URL(string: coverImageUrl) else { return }
 			coverImageView.image = nil
 			URLSession.shared.dataTask(with: url) { (data, response, error) in
-				print(data)
+				
 				
 				if let err = error {
 					print("Failed to retrieve our book cover image, ", err)
@@ -41,12 +40,15 @@ class BookCell: UITableViewCell {
 		
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.image = UIImage(named: "steve_jobs")
+
 		return imageView
 	}()
 	
 	private let titleLabel: UILabel = {
 		let label = UILabel()
 		label.text = "This is the text of the title fo the book"
+		label.font = UIFont.boldSystemFont(ofSize: 16)
+		label.textColor = .white
 		label.translatesAutoresizingMaskIntoConstraints = false
 		
 		return label
@@ -55,7 +57,7 @@ class BookCell: UITableViewCell {
 	private let authorLabel: UILabel =  {
 		let label = UILabel()
 		label.text = "This is the author label for the row"
-		
+		label.textColor = .gray
 		label.translatesAutoresizingMaskIntoConstraints = false
 		return label
 	}()
@@ -63,7 +65,7 @@ class BookCell: UITableViewCell {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		
 		
-		
+		backgroundColor = .clear
 		addSubview(coverImageView)
 		coverImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
 		coverImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true

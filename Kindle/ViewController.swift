@@ -16,16 +16,54 @@ class ViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+		setupNavigationBarStyles()
 		
 		tableView.register(BookCell.self, forCellReuseIdentifier: "cellId")
 		tableView.tableFooterView = UIView()
+		tableView.backgroundColor = UIColor.lightGray
 		navigationController?.title = "Kindle"
 		
 		fetchBooks()
 
 	}
+	
+	override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+		return 50
+	}
+	override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+		let footerView = UIView()
+		footerView.backgroundColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
+		let segmentedControl = UISegmentedControl(items: ["Cloud", "Device"])
+		segmentedControl.tintColor = .white
+		segmentedControl.selectedSegmentIndex = 0
+		segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+		footerView.addSubview(segmentedControl)
+		segmentedControl.centerYAnchor.constraint(equalTo: footerView.centerYAnchor).isActive = true
+		segmentedControl.centerXAnchor.constraint(equalTo:  footerView.centerXAnchor).isActive = true
+		segmentedControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
+		segmentedControl.heightAnchor.constraint(equalToConstant: 30).isActive = true
+		
+		let gridButton = UIButton(type: .system)
+		gridButton.setImage(UIImage(named: "grid")?.withRenderingMode(.alwaysOriginal), for: .normal)
+		gridButton.translatesAutoresizingMaskIntoConstraints = false
+		footerView.addSubview(gridButton)
+		gridButton.leftAnchor.constraint(equalTo: footerView.leftAnchor, constant: 8).isActive = true
+		gridButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+		gridButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+		gridButton.centerYAnchor.constraint(equalTo: footerView.centerYAnchor).isActive = true
+		
+		let sortButton = UIButton(type: .system)
+		sortButton.setImage(UIImage(named: "sort")?.withRenderingMode(.alwaysOriginal), for: .normal)
+		sortButton.translatesAutoresizingMaskIntoConstraints = false
+		footerView.addSubview(sortButton)
+		sortButton.rightAnchor.constraint(equalTo: footerView.leftAnchor, constant: -8).isActive = true
+		sortButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+		sortButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+		sortButton.centerYAnchor.constraint(equalTo: footerView.centerYAnchor).isActive = true
+		return footerView
+	}
 	func fetchBooks() {
-		print("Fetching books")
+		
 		if let url = URL(string: "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/kindle.json") {
 			URLSession.shared.dataTask(with: url) { (data, response, error) in
 				
@@ -53,9 +91,20 @@ class ViewController: UITableViewController {
 			}.resume()
 			
 		}
-	
 	}
-	
+	func setupNavigationBarStyles() {
+		navigationController?.navigationBar.barTintColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 0)
+		navigationController?.navigationBar.isTranslucent = false
+		navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuPressed))
+			navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "amazon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleAmazonIconPressed))
+	}
+
+	@objc func handleMenuPressed() {
+		print("menu button pressed")
+	}
+	@objc func handleAmazonIconPressed() {
+		print("amazon button pressed")
+	}
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		
 		let book = self.books?[indexPath.row]
